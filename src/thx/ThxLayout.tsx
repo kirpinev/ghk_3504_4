@@ -29,7 +29,7 @@ export const ThxLayout = () => {
         </Typography.Text>
       </div>
 
-      <div className={appSt.bottomBtn}>
+      <div className={appSt.bottomBtnThx}>
         <ButtonMobile block view="primary" href="">
           Хорошо
         </ButtonMobile>

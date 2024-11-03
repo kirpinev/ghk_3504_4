@@ -23,7 +23,7 @@ import { useState } from "react";
 export const App = () => {
   const [loading, setLoading] = useState(false);
   const [thxShow, setThx] = useState(LS.getItem(LSKeys.ShowThx, false));
-  const [selected, setSelected] = useState<string>("nothing");
+  const [selected, setSelected] = useState<null | string>(null);
 
   const submit = () => {
     setLoading(true);
@@ -271,14 +271,14 @@ export const App = () => {
         </div>
       </div>
 
-      <Gap size={96} />
+      <Gap size={16} />
 
       <div className={appSt.bottomBtn}>
         <ButtonMobile
           loading={loading}
+          disabled={!selected}
           block
           view="primary"
-          href=""
           onClick={submit}
         >
           Оформить карту
