@@ -112,7 +112,7 @@ export const App = () => {
           </Typography.TitleResponsive>
         </div>
         <Typography.Text tag="p" view="primary-medium" color="secondary">
-          Выберите партнера и получите подарок за оформление детской карты
+          Выберите партнера, у которого хотели бы получить подарок за оформление детской карты
         </Typography.Text>
 
         <div className={appSt.gifts}>
