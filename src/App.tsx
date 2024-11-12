@@ -19,6 +19,7 @@ import { ThxLayout } from "./thx/ThxLayout";
 import { Gap } from "@alfalab/core-components/gap";
 import { StatusBadge } from "@alfalab/core-components/status-badge";
 import { useState } from "react";
+import {sendDataToGA} from "./utils/events.ts";
 
 export const App = () => {
   const [loading, setLoading] = useState(false);
@@ -27,7 +28,7 @@ export const App = () => {
 
   const submit = () => {
     setLoading(true);
-    Promise.resolve().then(() => {
+    sendDataToGA({ partner: selected as string }).then(() => {
       LS.setItem(LSKeys.ShowThx, true);
       setThx(true);
       setLoading(false);
@@ -118,10 +119,10 @@ export const App = () => {
         <div className={appSt.gifts}>
           <div
             className={appSt.gift}
-            style={{ ...(selected === "nothing" && { borderColor: "black" }) }}
-            onClick={() => setSelected("nothing")}
+            style={{ ...(selected === "no_choice" && { borderColor: "black" }) }}
+            onClick={() => setSelected("no_choice")}
           >
-            {selected === "nothing" && (
+            {selected === "no_choice" && (
               <StatusBadge
                 key={20}
                 view="positive-checkmark"
@@ -200,10 +201,10 @@ export const App = () => {
           </div>
           <div
             className={appSt.gift}
-            style={{ ...(selected === "deti" && { borderColor: "black" }) }}
-            onClick={() => setSelected("deti")}
+            style={{ ...(selected === "gde_deti" && { borderColor: "black" }) }}
+            onClick={() => setSelected("gde_deti")}
           >
-            {selected === "deti" && (
+            {selected === "gde_deti" && (
               <StatusBadge
                 key={20}
                 view="positive-checkmark"
@@ -240,10 +241,10 @@ export const App = () => {
           </div>
           <div
             className={appSt.gift}
-            style={{ ...(selected === "sport" && { borderColor: "black" }) }}
-            onClick={() => setSelected("sport")}
+            style={{ ...(selected === "sportmaster" && { borderColor: "black" }) }}
+            onClick={() => setSelected("sportmaster")}
           >
-            {selected === "sport" && (
+            {selected === "sportmaster" && (
               <StatusBadge
                 key={20}
                 view="positive-checkmark"
@@ -255,10 +256,10 @@ export const App = () => {
           </div>
           <div
             className={appSt.gift}
-            style={{ ...(selected === "brain" && { borderColor: "black" }) }}
-            onClick={() => setSelected("brain")}
+            style={{ ...(selected === "brainhub" && { borderColor: "black" }) }}
+            onClick={() => setSelected("brainhub")}
           >
-            {selected === "brain" && (
+            {selected === "brainhub" && (
               <StatusBadge
                 key={20}
                 view="positive-checkmark"

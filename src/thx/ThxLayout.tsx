@@ -5,6 +5,12 @@ import { thxSt } from "./style.css";
 import { appSt } from "../style.css.ts";
 
 export const ThxLayout = () => {
+    const clickSuccess = () => {
+        window.gtag("event", "3504_ok_click", {
+            variant_name: "ghk_3504_4",
+        });
+    };
+
   return (
     <>
       <div className={thxSt.container}>
@@ -30,7 +36,7 @@ export const ThxLayout = () => {
       </div>
 
       <div className={appSt.bottomBtnThx}>
-        <ButtonMobile block view="primary" href="">
+        <ButtonMobile block view="primary" href="" onClick={clickSuccess}>
           Хорошо
         </ButtonMobile>
       </div>
