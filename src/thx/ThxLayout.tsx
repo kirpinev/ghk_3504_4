@@ -36,7 +36,7 @@ export const ThxLayout = () => {
       </div>
 
       <div className={appSt.bottomBtnThx}>
-        <ButtonMobile block view="primary" href="" onClick={clickSuccess}>
+        <ButtonMobile block view="primary" href="alfabank://debit_card_showcase?flowType=KIDS" onClick={clickSuccess}>
           Хорошо
         </ButtonMobile>
       </div>
