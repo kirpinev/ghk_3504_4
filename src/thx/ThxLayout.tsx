@@ -5,11 +5,11 @@ import { thxSt } from "./style.css";
 import { appSt } from "../style.css.ts";
 
 export const ThxLayout = () => {
-    const clickSuccess = () => {
-        window.gtag("event", "3504_ok_click", {
-            variant_name: "ghk_3504_4",
-        });
-    };
+  const clickSuccess = () => {
+    window.gtag("event", "3504_ok_click", {
+      variant_name: "ghk_3504_4",
+    });
+  };
 
   return (
     <>
@@ -27,17 +27,21 @@ export const ThxLayout = () => {
           defaultMargins
           weight="bold"
         >
-          Спасибо, мы записали ваш ответ
+          Еще чуть-чуть
         </Typography.TitleResponsive>
         <Typography.Text tag="p" view="primary-medium">
-          Сервис находится в разработке. Как только он будет доступен, мы
-          обязательно вам сообщим.
+          Оформить детскую карту вы можете на следующем экране.
         </Typography.Text>
       </div>
 
       <div className={appSt.bottomBtnThx}>
-        <ButtonMobile block view="primary" href="alfabank://debit_card_showcase?flowType=KIDS" onClick={clickSuccess}>
-          Хорошо
+        <ButtonMobile
+          block
+          view="primary"
+          href="alfabank://debit_card_showcase?flowType=KIDS"
+          onClick={clickSuccess}
+        >
+          Оформить карту
         </ButtonMobile>
       </div>
     </>
